@@ -15,12 +15,12 @@ import {
   SimpleChanges,
   ViewChildren
 } from '@angular/core';
+import { Subscription } from 'rxjs';
 import {
   CodeInputComponentConfig,
   CodeInputComponentConfigToken,
   defaultComponentConfig
 } from './code-input.component.config';
-import { Subscription } from 'rxjs';
 
 enum InputState {
   ready = 0,
@@ -431,7 +431,7 @@ export class CodeInputComponent implements AfterViewInit, OnInit, OnChanges, OnD
       return false;
     }
 
-    const isDigitsValue = /^[0-9]+$/.test(value.toString());
+    const isDigitsValue = /^[0-9۰-۹٠-٩]+$/.test(value.toString());
     return isDigitsValue || (this.isCharsCode || this.isNonDigitsCode);
   }
 
